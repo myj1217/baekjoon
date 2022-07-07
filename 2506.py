@@ -1,12 +1,14 @@
-# 2501번: 약수 구하기
+# 2506번: 점수계산
 
-N, K = map(int, input().split())
+N = int(input())
+li = list(map(int, input().split()))
+res = 0
 cnt = 0
-for i in range(1, N + 1):
-    if N % i == 0:
+for n in li:
+    if n == 1:
         cnt += 1
-        if cnt == K:
-            print(i)
-            break
-if cnt < K:
-    print(0)
+    else:
+        res += cnt * (cnt + 1) // 2
+        cnt = 0
+res += cnt * (cnt + 1) // 2
+print(res)
