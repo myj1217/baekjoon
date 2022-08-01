@@ -1,8 +1,15 @@
-# 2783번: 삼각 김밥
+# 2804번: 크로스워드 만들기
 
-X, Y = map(int, input().split())
-li = [X / Y]
-for _ in range(int(input())):
-    X, Y = map(int, input().split())
-    li.append(X / Y)
-print("%.2f" % (min(li) * 1000))
+s1, s2 = map(str, input().split())
+
+for i in range(len(s1)):
+    if s1[i] in s2:
+        col = i
+        row = s2.index(s1[i])
+        break
+    
+for i in range(len(s2)):
+    if i == row:
+        print(s1)
+    else:
+        print('.' * col + s2[i] + '.' * (len(s1) - col - 1))
