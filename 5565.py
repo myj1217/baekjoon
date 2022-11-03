@@ -1,5 +1,5 @@
-# 5554번: 심부름 가는 길
+# 5565번: 영수증
 
-s = sum([int(input()) for _ in range(4)])
-print(s // 60)
-print(s % 60)
+t = int(input())
+li = [int(input()) for _ in range(9)]
+print(t - sum(li))
